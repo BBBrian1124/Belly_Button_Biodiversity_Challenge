@@ -1,0 +1,16 @@
+/* Syntax follows imilar to key value pairs */
+/* this for example says the body is a light font colour */
+body {
+
+    color: #f7f7f7;
+  }
+  
+    /* .jumbotron tells the stylesheet to apply the changes only to divs with a class of "jumbotron." */
+  .jumbotron {
+    /*  We specify a background image, then tell the code where the image is stored. */  
+    background-image: url("dna.jpg");
+    /* The size of the background is set to span the entire width and height of the element, no matter the size of the viewport. */
+    background-size: 100% 100%;
+    /* We've aligned the text to be in the center of the element. */
+    text-align: center;
+  }

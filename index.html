@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <!--add the link to our stylesheet (style.css) for DELIVERABLE 4-->
+ <link rel="stylesheet" href="static/style.css">
+
+<!-- create link to Bootstrap cdn-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <!--DELIVERABLE 4: since an image was added we will change the text to be white to show the text better-->
+        <h1 style="color:white">Belly Button Biodiversity Dashboard</h1>
+        <p style="color:white">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+
+    <!--DELIVERABLE 4: add a paragraph explaining the purpose of the dashboard-->
+    <div class="row">
+      <p style="color:black">This project was built to help identify bacterial species that have the ability to synthesize protein that tastes like beef. It was discovered that bacteria found in the human body, specifically in the belly button, may be used for this. By looking at these charts in the dashboard we can identify which bacteria species live in the human body and can then potentially be used.</p>
+    </div>
+
+    <div class="row">
+      <!-- use up 2 columns of the Bootsrap grid for these rows-->
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <!-- this ID will be used to obtain the participants ID # -->
+          <!-- select indicates that this is a drop down list -->
+          <!-- using onchange we can detect a change and call the optionChanged function-->
+          <!-- the argument for that function is this.value, which means it returns the value of the drop down menu selection-->
+          <!-- this. accesses the object in question, in this case the value or the drop down menu value-->
+          <!-- recall our init function found all the ids and passed them as values to this tag-->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <!-- this section wil be to load in the participant's data -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/charts.js"></script>
+
+</body>
+
+</html>
